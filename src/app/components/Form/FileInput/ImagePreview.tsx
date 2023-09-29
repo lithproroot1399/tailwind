@@ -1,3 +1,5 @@
+import { User } from "lucide-react";
+
 export interface ImagePreviewProps {}
 
 export function ImagePreview(props: ImagePreviewProps) {
