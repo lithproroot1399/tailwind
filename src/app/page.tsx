@@ -138,7 +138,7 @@ export default function Home() {
                   This will be displayed on your profile
                   </span>
               </label>
-          <div></div>    
+              
             </div>
 
             <div className="grid gap-3 grid-cols-form pt-5">
@@ -151,8 +151,13 @@ export default function Home() {
                   Shere a few snippets of your work
                   </span>
               </label>
-          <div></div>    
+              <FileInput.Root>
+                    <FileInput.Trigger />
+                    <FileInput.Control />
+                  </FileInput.Root> 
+          
             </div>
+        
             <div className="flex items-center justify-end gap-2 pt-5">
             <button 
             type="button"
