@@ -1,6 +1,7 @@
 import { SettingsTabs } from './components/SettingsTabs'
 import * as Input from './components/Input'
-import { Mail, UploadCloud, User } from 'lucide-react'
+import * as FileInput from './components/Form/FileInput'
+import { Mail } from 'lucide-react'
 
 export default function Home() {
   return (
@@ -84,33 +85,13 @@ export default function Home() {
                 <span className="text-sm font-normal text-zinc-500 block mt-0.5">
                 This will be displayed on your profile
                 </span>
-              </label>
-              
-              <div className="flex items-start gap-5">
-              <div className="bg-violet-50 flex h-16 w-16 items-center justify-center rounded-full">
-                <User className="w-8 h-8 text-violet-500" />
-                </div>
-
-                <label 
-                htmlFor="photo"
-                className="flex-1 cursor-pointer flex flex-col items-center gap-3 rounded-lg border border-zinc-300 px-6 py-4 text-center text-zinc-500 shadow-sm hover:border-violet-200 hover:bg-violet-25 hover:text-violet-500"
-                >
-                  Selecionar arquivo
-                <div className="rounded-full border-6 border-zinc-50 bg-zinc-100 p-2">
-                  <UploadCloud className="h-5 w-5 text-zinc-600" />
-                </div>
-                <div className='flex flex-col items-center gap-1'>
-                  <span className="text-sm">
-                  <span className="text-semibolt text-violet-700">Click to upload</span> or drag an drop</span>
-                  <span className="text-xs">
-                    SVG, PNG, JPG, or GIF (max. 800x400px)
-                    </span>
-                </div>
-                </label>
-                
-                <input type="file" className="sr-only" id="photo" />
-                
-                </div>
+              </label>                           
+                  <FileInput.Root className="flex items-start gap-5">
+                    <FileInput.ImagePreview />
+                    <FileInput.Trigger />
+                    <FileInput.Control />
+                  </FileInput.Root>  
+              </div>
               
             <div className="grid gap-3 grid-cols-form pt-5">
               <label 
@@ -184,7 +165,6 @@ export default function Home() {
             className=" rounded-lg bg-violet-600 text-white hover:bg-violet-700 px-4 py-2 text-sm font-semibold shadow-sm ">
               Save
               </button>
-            </div>
             </div>
           </form>
       </div>
