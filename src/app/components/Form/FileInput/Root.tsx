@@ -1,13 +1,23 @@
-import { ComponentProps, createCountext } from "react"
+
+import { ComponentProps, createContext, useContext, useId } from 'react'
 
 export type RootProps = ComponentProps<'div'>
-
-const FileInputContext = createContext({} as FileInputContextType)
 
 type FileInputContextType = {
     id: string
 }
 
+const FileInputContext = createContext({} as FileInputContextType)
+
 export function Root(props: RootProps) {
-    return <div {...props} />
+    const id = useId()
+        
+    return (
+    <FileInputContext.Provider value={{ id }}>
+        <div {...props} />
+    </FileInputContext.Provider>
+    
+    )
 }
+
+export const useFileInput = () => useContext(FileInputContext)
