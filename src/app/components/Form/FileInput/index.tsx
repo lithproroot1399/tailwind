@@ -1,3 +1,5 @@
+'use client'
+
 import { Control } from './Control'
 import { ImagePreview } from './ImagePreview'
 import { Root } from './Root'
